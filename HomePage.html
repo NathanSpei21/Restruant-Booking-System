@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS\General.css">
+    <link rel="stylesheet" href="CSS\SearchCSS.css">
+    <link rel="stylesheet" href="CSS\log.css">
+    <link rel="stylesheet" href="CSS\Register.css">
+    <link rel="icon" href="imgs/TabLogo.PNG" style="border-radius: 8px">
+    <title>BookIT | Booking System</title>
+</head>
+
+<body>
+
+<div class="header">
+    <a href="HomePage.html" class="logo"><img src="imgs\LOGO1.png"></a>
+    <div class="header-right">
+        <div class="hover">
+            <a onclick="document.location='AccountPage.html'" id="account">Account</a>
+            <a onclick="signOut()" id="signout">Sign out</a>
+            <a onclick="getAllUsernames()" id="register">Register</a>
+            <a onclick="document.getElementById('id01').style.display='block'" id="signin">Sign in</a>
+         </div>
+    </div>
+</div>
+
+<div id="id01" class="modal">
+    <form class="modal-content animate"  method="post" id="signInForm" onsubmit=";return false">
+        <div class="container2">
+            <h1>Sign In</h1>
+            <p>Enter username and password to access account</p>
+            <hr>
+
+            <b>Username</b>
+            <input type="text" placeholder="Enter Username" id="uname" required>
+
+            <b>Password</b>
+            <input type="password" placeholder="Enter Password" id="pass" required>
+
+            <button type="submit" name="ActualSignin" onclick="getSignInData()">Sign In</button>
+        </div>
+        <div class="container2" style="background-color: lightgray; width: 100%" >
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<div id="id02" class="modal2">
+    <form class="modal-content2 animate">
+        <div class="container2">
+            <h1>Register an Account</h1>
+            <p>Fill in to create either a Customer or Staff account</p>
+            <hr>
+
+            <b>Account Type</b>
+            <br>
+            <input list="Atypes" name="Atypes" id="AccType" placeholder="Account Type" required>
+            <datalist id="Atypes">
+                <option value="Customer"></option>
+                <option value="Staff"></option>
+            </datalist>
+            <br>
+
+            <b>Name</b>
+            <input type="text" placeholder="Enter Fullname" id="Name" required>
+
+            <b>Username</b>
+            <input type="text" placeholder="Enter Username" id="Username" required>
+
+            <b>Password</b>
+            <input type="password" minlength="7" placeholder="Enter Password" id="Password" required>
+
+            <b>Password*</b>
+            <input type="password" minlength="7" placeholder="Re-Enter Password" id="Re-Password" required>
+
+            <button type="button" onclick="getRegData()">Register</button>
+        </div>
+        <div class="container2" style="background-color: lightgray; width: 100%" >
+            <div class="clearfix2">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="middle">
+<p>Search for a Booking</p>
+    <div class="search-container">
+        <input type="number" class="People" id="People" placeholder="No.of People">
+        <input type="time" class="Time" id="Time">
+        <input list="types" name="types" id="FType" placeholder="Cuisine">
+        <datalist id="types">
+            <option value="Italian"></option>
+            <option value="Seafood"></option>
+            <option value="Indian"></option>
+            <option value="Chinese"></option>
+            <option value="Mexican"></option>
+            <option value="SteakHouse"></option>
+            <option value="French"></option>
+            <option value="Japanese"></option>
+            <option value="Greek"></option>
+            <option value="British"></option>
+        </datalist>
+        <input list="city" name="city" id="City's" placeholder="Location">
+        <datalist id="city">
+            <option value="Glasgow"></option>
+            <option value="Edinburgh"></option>
+            <option value="Dundee"></option>
+            <option value="Inverness"></option>
+            <option value="Aberdeen"></option>
+            <option value="London"></option>
+            <option value="Manchester"></option>
+            <option value="Liverpool"></option>
+            <option value="Newcastle"></option>
+            <option value="Birmingham"></option>
+            <option value="Leeds"></option>
+        </datalist>
+        <button1 onclick="StoreSearch()" type="button" class="Search">GO</button1>
+    </div>
+</div>
+
+<div class="bottom">
+<!--  Breakfast/Lunch/Dinner -->
+    <div class="row">
+        <div class="column" onclick="quickTimeSearches('09:00')">
+            <p>Breakfast Restaurants. <br> (Open at 9am)</p>
+        </div>
+        <div class="column" onclick="quickTimeSearches('12:00')">
+            <p>Lunch Restaurants. <br> (Open at 12pm)</p>
+        </div>
+        <div class="column" onclick="quickTimeSearches('16:00')">
+            <p>Dinner Restaurants. <br> (Open at 4pm)</p>
+        </div>
+        <div class="column" onclick="quickLocationSearches('Glasgow')">
+            <p>Glasgow Restaurants</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="JavaScript\LogIn.js"></script>
+</body>
+</html>

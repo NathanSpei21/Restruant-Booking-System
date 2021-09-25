@@ -1,0 +1,47 @@
+.ResMiddle{
+    width: 100%;
+    height: 90%;
+    text-align: center;
+}
+
+.SearchedFor{
+    height: 10%;
+    width: 100%;
+    background-color: lightgray;
+    align-content: center;
+    padding: 15px;
+    border: 2px solid black;
+}
+.search-container2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    font-size: medium;
+    height: available;
+}
+.displayRes{
+    height: 90%;
+    background-color: white;
+}
+
+.info{
+    text-align: left;
+}
+.textHeader{
+    display: inline-block;
+    font-size: x-large;
+    color: black;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.sort{
+    display: inline-block;
+    float: right;
+}
+.results{
+
+}

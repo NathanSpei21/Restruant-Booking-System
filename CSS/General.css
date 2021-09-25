@@ -1,0 +1,109 @@
+.header {
+    height: 10%;
+    overflow: hidden;
+    background-color: #00008b;
+    padding: 10px 10px;
+}
+body, html {
+    height: 100%;
+}
+.logo :hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.header a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.hover{
+    color: white;
+}
+
+
+.hover a:hover{
+    background-color: black;
+}
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+    .column{
+        font-size: small;
+        width: 100%;
+    }
+}
+
+.bottom{
+    width: 100%;
+    min-height: 30%;
+    background-color: lightgray;
+    float: left;
+}
+.row{
+    display: flex;
+    padding: 5px 5px 5px 5px;
+    border: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-content: center;
+}
+.column {
+    text-align: center;
+    background-color: white;
+    font-family: sans-serif;
+    color: black;
+    border: 2px solid black;
+    font-size: x-large;
+    letter-spacing: 2px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin: 20px;
+    width: 21%;
+    height: 200px;
+    flex: 1 1 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+t1{
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+}
+
+.column:hover
+{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+table{
+    margin: auto;
+    width: 90% ;
+}
+
+table,th, td{
+    border-collapse: collapse;
+    border: solid 1px darkgray;
+}
+
+th,td{
+    padding: 30px;
+}

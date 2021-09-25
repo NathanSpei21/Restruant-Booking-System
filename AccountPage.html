@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="CSS\General.css">
+    <link rel="stylesheet" href="CSS\Account.css">
+    <link rel="stylesheet" href="CSS\Register.css">
+    <link rel="stylesheet" href="CSS\log.css">
+    <title>BookIT</title>
+</head>
+<body>
+<div class="header">
+    <a href="HomePage.html" class="logo"><img src="imgs\LOGO1.png"></a>
+    <div class="header-right">
+        <div class="hover">
+            <a onclick="document.getElementById('id04').style.display='block'" id="AddAccount">Add Restaurant</a>
+            <a onclick="document.getElementById('id05').style.display='block'" id="AddDate">Add Availability</a>
+            <a onclick="redirect()" id="DelAccount">View Restaurants</a>
+        </div>
+    </div>
+</div>
+
+<div id="id05" class="modal">
+    <form class="modal-content animate" method="post" id="signInForm" onsubmit=";return false">
+        <div class="container2">
+            <h1>Add Dates</h1>
+            <div id="tick" class="green">Date Added &#x2713;</div>
+            <p>Submit dates that your restaurant is open</p>
+            <hr>
+
+            <b>Date:</b>
+            <input type="date" placeholder="Enter Username" id="date" required>
+
+            <button type="submit" name="ActualSignin" onclick="addDate('store')" id="ADD">Add</button>
+        </div>
+        <div class="container2" style="background-color: lightgray; width: 100%">
+            <button type="button" onclick="addDate('send')" class="cancelbtn">Finished</button>
+        </div>
+    </form>
+</div>
+
+<div id="id04" class="modal2">
+    <form class="modal-content2 animate">
+        <div class="container2">
+            <h1>Add a Restaurant</h1>
+            <p>Fill in to Add your Restaurant</p>
+            <hr>
+
+            <b>Restaurant Name</b>
+            <br>
+            <input type="text" placeholder="Enter Restaurant Name" id="ResName" required>
+            <br>
+            <b>Location</b>
+            <br>
+            <input list="location" name="location" id="ResLocation" placeholder="Enter Location" required>
+            <datalist id="location">
+                <option value="Glasgow"></option>
+                <option value="Edinburgh"></option>
+                <option value="Dundee"></option>
+                <option value="Inverness"></option>
+                <option value="Aberdeen"></option>
+                <option value="London"></option>
+                <option value="Manchester"></option>
+                <option value="Liverpool"></option>
+                <option value="Newcastle"></option>
+                <option value="Birmingham"></option>
+                <option value="Leeds"></option>
+            </datalist>
+            <br>
+            <b>Capacity</b>
+            <input type="text" placeholder="Enter Max Capacity" id="Capacity" required>
+
+            <b>Cuisine</b>
+            <input list="FoodType" placeholder="Enter Cuisine" id="Cuisine" required>
+            <datalist id="FoodType">
+                <option value="Italian"></option>
+                <option value="Seafood"></option>
+                <option value="Indian"></option>
+                <option value="Chinese"></option>
+                <option value="Mexican"></option>
+                <option value="SteakHouse"></option>
+                <option value="French"></option>
+                <option value="Japanese"></option>
+                <option value="Greek"></option>
+                <option value="British"></option>
+            </datalist>
+
+            <b>Open time</b>
+            <input type="time" class="time" id="Open" required>
+
+            <b>Close time</b>
+            <input type="time" class="time" id="Close" required>
+            <br>
+
+
+            <button type="button" onclick="getResData()">Add Restaurant</button>
+        </div>
+        <div class="container2" style="background-color: lightgray; width: 100%">
+            <div class="clearfix2">
+                <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="id07" class="modal">
+    <form class="modal-content animate" method="post" id="CancelForm" onsubmit=";return false">
+        <div class="container2">
+            <h1>Cancel Booking</h1>
+            <p>Are you sure you want to cancel the following booking ?</p>
+            <hr>
+
+            <b>Restaurant Name: </b><t id="CancelResName"></t>
+            <br>
+            <b>Number of People: </b><t id="CancelNumberOfPeople"></t>
+            <br>
+            <b>Location: </b><t id="CancelLocation"></t>
+            <br>
+            <b>Time: </b><t id="CancelTime"></t>
+            <br>
+            <b>Date: </b><t id="CancelDate"></t>
+            <br>
+
+        </div>
+        <div class="container2" style="background-color: lightgray; width: 100%">
+            <button type="submit" name="ActualSignin" onclick="cancelBooking('Yes')">Yes</button>
+            <button type="button" onclick="cancelBooking('No')" class="cancelbtn" style="float: right; padding: 14px 20px">No</button>
+        </div>
+    </form>
+</div>
+
+<div class="AccMiddle">
+    <div class="Welcome">
+        <div class="container3">
+            <b class="Heading" id="Heading"></b>
+            <br>
+            <b1 class="Heading2">View Account and Bookings</b1>
+
+        </div>
+    </div>
+    <div class="info">
+        <div class="container4">
+            <div class="AccInfo">
+                <B1>Account Details</B1>
+                <hr>
+                <b id="Name">Name:</b>
+                <br>
+                <br>
+                <b id="Uname">Username:</b>
+                <br>
+                <br>
+                <b id="NoBookings">Number of bookings made:</b>
+                <br>
+            </div>
+        </div>
+        <div class="container4">
+            <div class="AccInfo">
+                <B1 id="MostRecent">Restaurant Details</B1>
+                <hr>
+                <b id="ResN"></b>
+                <br>
+                <br>
+                <b id="ResL"></b>
+                <br>
+                <br>
+                <b id="ResC"></b>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="Bookings">
+        <div class="container5">
+            <hr>
+            <button id="tableBookings">Bookings Table</button>
+            <button id="graphBookings">Bookings Graph</button>
+            <hr>
+            <div class="results">
+                <table id="bookings">
+                    <thead>
+                    <th id="FirstCol">Restaurant Name</th>
+                    <th id="SecondCol">Location</th>
+                    <th>Number of People</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th id="LastCol"></th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <canvas id="bookingsChart" class="chart" height="50%" width="100%"></canvas>
+        </div>
+    </div>
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+<script src="JavaScript\Account.js"></script>
+</body>
+</html>

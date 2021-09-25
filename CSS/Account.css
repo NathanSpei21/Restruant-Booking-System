@@ -1,0 +1,97 @@
+.Del{
+    color: red;
+}
+
+
+.AccMiddle{
+    height: 90%;
+}
+
+.chart{
+    padding: 50px 100px;
+    width: 100%;
+    height: 50%;
+    min-width: 800px;
+    min-height: 500px;
+    font-size: x-large;
+}
+
+
+.Welcome{
+    height: 20%;
+    background-color: lightgray;
+    border: 2px black solid;
+}
+
+.container3{
+    text-align: center;
+    margin-top: 3.5rem;
+}
+.Heading{
+    font-size: x-large;
+}
+
+.green{
+    font-size: large;
+    float: right;
+    color: green;
+}
+
+.Heading2{
+    font-size: large;
+}
+
+.info{
+    height: 30%;
+    background-color: whitesmoke;
+    padding: 20px 20% 20px 20%;
+}
+
+.Bookings{
+    background-color: whitesmoke;
+    padding: 20px 30px 20px 30px;
+    text-align: center;
+}
+
+
+.container4{
+    width: 49%;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.container5{
+    height: 100%;
+    width: 100%;
+    float: left;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: auto;
+}
+
+.AccInfo{
+    padding: 10px;
+    height: 100%;
+    min-width: 200px;
+    overflow: auto;
+}
+
+.time{
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #cccccc;
+    margin: 8px 0;
+}
+
+.textHeader{
+    display: inline-block;
+    font-size: x-large;
+    color: black;
+    padding: 5px;
+    margin-left: 10px;
+}

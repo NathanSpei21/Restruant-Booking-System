@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="cisCafe" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="cisCafe">
+        <serverdata>
+          <mappings>
+            <mapping deploy="IndividualProject" local="$PROJECT_DIR$" web="/IndividualProject" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/IndividualProject.iml" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
